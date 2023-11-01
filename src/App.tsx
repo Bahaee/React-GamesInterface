@@ -7,6 +7,19 @@ let cities = ["Rabat", "Casa", "Grenoble", "Paris"];
 
 function App() {
   const [alertVisibility, setAlertVisibility] = useState(false);
+  const [game, setGame] = useState({
+    id: 1,
+    player: {
+      name: "Riyad",
+      lastName: "Pouzani",
+    },
+  });
+
+  const handleClick = () => {
+    setGame({ ...game, player: { ...game.player, name: " Bahae" } });
+    console.log(game);
+  };
+
   return (
     <div>
       <ListGroup
@@ -26,6 +39,7 @@ function App() {
       >
         My Button
       </Button>
+      <Button onClick={handleClick}>Exercice button</Button>
     </div>
   );
 }
